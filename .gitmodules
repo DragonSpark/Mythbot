@@ -1,0 +1,4 @@
+[submodule "Framework"]
+	path = Framework
+	url = https://github.com/DragonSpark/Framework.git
+	branch = projects/Mythbot
