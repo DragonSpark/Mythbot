@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>DragonSpark.Mythbot.Environment</RootNamespace>
+    <AssemblyName>DragonSpark.Mythbot.Environment</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\DragonSpark.Application.Hosting.Server\DragonSpark.Application.Hosting.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LaunchDarkly.EventSource" Version="3.3.2" />
+  </ItemGroup>
+
+</Project>

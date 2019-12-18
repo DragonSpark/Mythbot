@@ -1,7 +1,7 @@
 using DragonSpark.Application.Hosting.Server;
-using DragonSpark.Compose;
 using DragonSpark.Model.Commands;
 using JetBrains.Annotations;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
@@ -15,20 +15,20 @@ namespace DragonSpark.Mythbot.Application
 		                                        .Get(args);
 	}
 
-
 	sealed class Configurator : DragonSpark.Application.Hosting.Server.Configurator
 	{
 		[UsedImplicitly]
-		public Configurator() : this(Start.An.Instance(ServiceConfiguration.Default)
-		                                  .Then(DefaultServiceConfiguration.Default)) {}
+		public Configurator(IConfiguration configuration)
+			: this(configuration, Registrations.Default.Then(ServiceConfiguration.Default)) {}
 
-		public Configurator(Action<IServiceCollection> services) : base(services) {}
+		public Configurator(IConfiguration configuration, Action<ConfigureParameter> services)
+			: base(configuration, services) {}
 	}
 
-	sealed class ServiceConfiguration : Command<IServiceCollection>
+	sealed class Registrations : Command<ConfigureParameter>
 	{
-		public static ServiceConfiguration Default { get; } = new ServiceConfiguration();
+		public static Registrations Default { get; } = new Registrations();
 
-		ServiceConfiguration() : base(x => x.AddSingleton(WeatherForecastService.Default)) {}
+		Registrations() : base(x => x.Services.AddSingleton(WeatherForecastService.Default)) {}
 	}
 }

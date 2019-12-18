@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonSpark.Application.Hos
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonSpark.Application.Hosting.BenchmarkDotNet", "Framework\DragonSpark.Application.Hosting.BenchmarkDotNet\DragonSpark.Application.Hosting.BenchmarkDotNet.csproj", "{63FCA710-BB36-4AFC-9BDE-DA453C5FD98E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonSpark.Mythbot.Environment.Development", "DragonSpark.Mythbot.Environment.Development\DragonSpark.Mythbot.Environment.Development.csproj", "{7F2F06AB-8D8E-43BB-8263-01C77D6D1B6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{63FCA710-BB36-4AFC-9BDE-DA453C5FD98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63FCA710-BB36-4AFC-9BDE-DA453C5FD98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63FCA710-BB36-4AFC-9BDE-DA453C5FD98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F2F06AB-8D8E-43BB-8263-01C77D6D1B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F2F06AB-8D8E-43BB-8263-01C77D6D1B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F2F06AB-8D8E-43BB-8263-01C77D6D1B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F2F06AB-8D8E-43BB-8263-01C77D6D1B6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
