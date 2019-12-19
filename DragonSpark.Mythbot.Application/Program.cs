@@ -1,5 +1,6 @@
 using DragonSpark.Application.Hosting.Server;
 using DragonSpark.Model.Commands;
+using DragonSpark.Mythbot.Application.Controllers;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,16 +20,19 @@ namespace DragonSpark.Mythbot.Application
 	{
 		[UsedImplicitly]
 		public Configurator(IConfiguration configuration)
-			: this(configuration, Registrations.Default.Then(ServiceConfiguration.Default)) {}
+			: this(configuration, Registrations.Default.Promote().Then(ServiceConfiguration.Default)) {}
 
 		public Configurator(IConfiguration configuration, Action<ConfigureParameter> services)
 			: base(configuration, services) {}
 	}
 
-	sealed class Registrations : Command<ConfigureParameter>
+	sealed class Registrations : Command<IServiceCollection>
 	{
 		public static Registrations Default { get; } = new Registrations();
 
-		Registrations() : base(x => x.Services.AddSingleton(WeatherForecastService.Default)) {}
+		Registrations() : base(x => x.AddSingleton(WeatherForecastService.Default)
+		                             .AddSingleton<EventMessages>()
+		                             .AddSingleton<Hasher>()
+		                             .AddSingleton<EventMessageBinder>()) {}
 	}
 }

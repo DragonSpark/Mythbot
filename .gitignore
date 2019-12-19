@@ -7,6 +7,7 @@
 *.rsuser
 *.suo
 *.user
+*.secrets.json
 *.userosscache
 *.sln.docstates
 
@@ -221,6 +222,7 @@ _pkginfo.txt
 
 # Others
 ClientBin/
+.secrets/
 ~$*
 *~
 *.dbmdl
